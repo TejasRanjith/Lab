@@ -1,0 +1,18 @@
+*  The keys() method will return a list of all the keys in the dictionary.
+    x=thisdict.keys()
+*  The values() method will return a list of all the values in the dictionary.
+    x=thisdict.values()
+*  The items() method will return each item in a dictionary, as tuples in a list.
+    x=thisdict.items()
+*  The update() method will update the dictionary will update the dictionary with the items from the given argument.
+    thisdict.update(DICT)
+*  The pop() method removes the item with the specified key name.
+    thisdict.pop(KEY)
+*  The popitem() method removes the last inserted item.
+*  The del keyword removes the item with the specified key name.
+*  It can also delete the dictionary completely
+*  The clear() method empties the dictionary
+*  Make a copy of dictionary with the copy() method.
+    mydict=thisdict.copy()
+*  Another way to make a copy is to use the built-in function dict().
+    mydict=dict(thisdict)

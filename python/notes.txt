@@ -17,3 +17,11 @@
 *  Another way to make a copy is to use the built-in function dict().
     mydict=dict(thisdict)
 
+
+Q1 write a program that checks if a given number is even or odd
+
+Q2 Create a program that determines if a user 
+
+
+
+Q1 Write a program that prints the number

@@ -16,4 +16,5 @@
     mydict=thisdict.copy()
 *  Another way to make a copy is to use the built-in function dict().
     mydict=dict(thisdict)
+*  
 

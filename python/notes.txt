@@ -16,6 +16,7 @@
     mydict=thisdict.copy()
 *  Another way to make a copy is to use the built-in function dict().
     mydict=dict(thisdict)
+*  
 
 
 Q1 write a program that checks if a given number is even or odd

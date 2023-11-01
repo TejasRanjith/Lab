@@ -79,8 +79,36 @@ void polyadd(int af,int al,int bf,int bl,int free)
                     p++;
                     q++;
                 }
-                
+                break;
+            }
+            case '>':
+            {
+                free=newterm(term[p].coeff,term[p].exp,free);
+                p++;
+                break;
+            }
+            case '<':
+            {
+                free=newterm(term[q].coeff,term[q].exp,free);
+                q++;
+                break;
             }
         }
+    }
+    while(p<=al)
+    {
+        free=newterm(term[p].coeff,term[p].exp,free);
+        p++;
+    }
+    while(q<=bl)
+    {
+        free=newterm(term[q].coeff,term[q].exp,free);
+        q++;
+    }
+    printf("Resultant Polynomial is: \n");
+    i=free1;
+    while(i<free)
+    {
+        printf("")
     }
 }

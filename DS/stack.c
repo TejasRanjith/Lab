@@ -1,6 +1,5 @@
 #include <stdio.h>
 int a[100],n=0,top=-1,op=0;
-// char op;
 void display()
 {
 	printf("| ");

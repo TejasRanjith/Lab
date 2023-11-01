@@ -16,6 +16,7 @@ void pop()
 	printf("The Element Removed is : %d\n",a[top]);
     a[top]=0;
     top--;
+    display();
     }
     else
     {
@@ -32,6 +33,7 @@ void add()
 		printf("Enter the element : ");
 		scanf("%d",&elem);
 		a[top]=elem;
+        display();
 	}
 	else
 	{

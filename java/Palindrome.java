@@ -17,15 +17,20 @@ public class Palindrome
 				{
 					cond=1;
 				}
+				else
+				{
+					cond=0;
+				}
 			}
+				
 		}
 		if(cond==1)
 		{
-			System.out.println("It is a Palindrome.");
+			System.out.print("It is a Palindrome.");
 		}
 		else
 		{
-			System.out.println("It is not a Palindrome.");
+			System.out.print("It is not a Palindrome.");
 		}
 		
 	}

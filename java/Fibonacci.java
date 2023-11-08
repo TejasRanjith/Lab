@@ -9,7 +9,7 @@ public class Fibonacci
 		System.out.print("Enter the Number :");
 		int n=s.nextInt();
 		//String x=s.next();
-		System.out.print(a);
+		System.out.print(a+" , "+b);
 		for(i=1;b<n;i++)
 		{
 			c=b;
@@ -20,6 +20,6 @@ public class Fibonacci
 				System.out.print(" , "+b);
 			}
 		}
-		System.out.println("");
+		
 	}
 }

@@ -84,7 +84,7 @@ void Inserta()
 		printf("Overflow Error!!\n");
 		exit(0);
 	}
-	ptr->coeffecient=co;
+	ptr->coefficient=co;
 	ptr->exp=exp;
 	if(starta==NULL)
 	{
@@ -110,7 +110,7 @@ void Insertb()
 	printf("Enter the Exponent : \n");
 	scanf("%d",&exp);
 	ptr=(struct poly*)malloc(sizeof(struct poly));
-	ptr->coeffecient=co;
+	ptr->coefficient=co;
 	ptr->exp=exp;
 	if(ptr == NULL)
 	{
@@ -126,7 +126,7 @@ void Insertb()
 	else
 	{
 		temp=startb;
-		while(temp-address!=NULL)
+		while(temp->address!=NULL)
 		{
 			temp=temp->address;
 		}
@@ -188,11 +188,45 @@ void Insertf(int a,int b)
 		printf("Overflow Error!!\n");
 		exit(0);
 	}
-	ptr->coeffecient=a;
+	ptr->coefficient=a;
 	ptr->exp=b;
 	if(startf==NULL)
 	{
 		ptr->address=startf;
 		startf=ptr;
 	}
+	else
+	{
+		temp=startf;
+		while(temp->address!=NULL)
+		{
+			temp=temp->address;
+		}
+		temp->address=ptr;
+		ptr->address=NULL;
+	}
+	count++;
 }
+void displayf()
+{
+	int i=0;
+	if(startf==NULL)
+	{
+		printf("List is Empty\n");
+		exit(0);
+	}
+	temp=startf;
+	printf("Resultant Polynomial: \n");
+	while(temp!=NULL)
+	{
+		printf("%dx^%d ",temp->coefficient,temp->exp);
+		if(i!=count-1)
+		{
+			printf("+ ");
+			i++;
+		}
+		temp=temp->address;
+	}
+	printf("\n");
+}
+

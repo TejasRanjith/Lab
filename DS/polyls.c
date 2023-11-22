@@ -142,4 +142,14 @@ void display(int num1,int num2)
 		printf("List is Empty\n");
 		exit(0);
 	}
+	temp=starta;
+	printf("First Polynomial:\n");
+	while(temp!=NULL)
+	{
+		printf("%dx^%d ",temp->coefficient,temp->exp);
+		if(i!=num1-1)
+		{
+			printf("
+		}
+	}
 }

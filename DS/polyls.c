@@ -160,6 +160,18 @@ void display(int num1,int num2)
 	printf("Second Polynomial: \n");
 	while(temp!=NULL)
 	{
-		
+		printf("%dx^%d ",temp->coefficient,temp->exp);
+		if(i!=num2-1)
+		{
+			printf("+ ");
+			i++;
+		}
+		temp=temp->address;
 	}
+	printf("\n");
+}
+
+char compare(int a,int b)
+{
+	
 }

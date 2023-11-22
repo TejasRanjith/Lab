@@ -58,4 +58,45 @@ void main()
 			}
 		}
 	}
+	while(a!=NULL)
+	{
+		Insertf(a->coefficient,a->exp);
+		a=a->address;
+	}
+	while(b!=NULL)
+	{
+		Insertf(b->coefficient,b->exp);
+		b=b->address;
+	}
+	display(num1,num2);
+	displayf();
+}
+void Inserta()
+{
+	int co,exp;
+	printf("Enter the coefficient : \n");
+	scanf("%d",&co);
+	printf("Enter the exponent : \n");
+	scanf("%d",&exp);
+	ptr=(struct poly*)malloc(sizeof(struct poly));
+	if(ptr == NULL)
+	{
+		printf("Overflow Error!!\n");
+		exit(0);
+	}
+	ptr->coeffecient=co;
+	ptr->exp=exp;
+	if(starta==NULL)
+	{
+		ptr->address=starta;
+		starta=ptr;
+	}
+	else
+	{
+		temp=starta;
+		while(temp->address!=NULL)
+		{
+			temp=temp->address;
+		}
+	}
 }

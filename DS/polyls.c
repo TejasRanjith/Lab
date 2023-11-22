@@ -180,3 +180,19 @@ char compare(int a,int b)
 	else
 	return '>';
 }
+void Insertf(int a,int b)
+{
+	ptr=(struct poly*)malloc(sizeof(struct poly));
+	if(ptr == NULL)
+	{
+		printf("Overflow Error!!\n");
+		exit(0);
+	}
+	ptr->coeffecient=a;
+	ptr->exp=b;
+	if(startf==NULL)
+	{
+		ptr->address=startf;
+		startf=ptr;
+	}
+}

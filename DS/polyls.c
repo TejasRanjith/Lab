@@ -1,35 +1,37 @@
-#include <stdio.h>
-#include <stdlib.h>
+# include <stdio.h>
+# include <stdlib.h>
+
 char compare();
-void Insertf();
-void Inserta();
-void Insertb();
+void insertf();
+void inserta();
+void insertb();
 void display();
 void displayf();
-struct poly 
+struct poly
 {
 	int coefficient;
 	int exp;
 	struct poly *address;
 }*starta=NULL,*a,*b,*temp,*ptr,*startb=NULL,*startf=NULL;
-int count = 0;
+int count=0;
 void main()
 {
 	int num1,co1,exp1,i,num2;
-	printf("Enter the number of terms of the polynomial:\n");
+
+	printf("Enter the number of terms in first polynomial\n");
 	scanf("%d",&num1);
 	for(i=0;i<num1;i++)
 	{
-		Inserta();
+		inserta();
 	}
-	printf("Enter the number of terms of the Second Polynomial:\n");
+	printf("Enter the number of the second polynomial\n");
 	scanf("%d",&num2);
 	for(i=0;i<num2;i++)
 	{
-		Insertb();
+		insertb();
 	}
 	a=starta,b=startb;
-	while(a!=NULL && b!=NULL)
+	while(a!=NULL&&b!=NULL)
 	{
 		switch(compare(a->exp,b->exp))
 		{
@@ -38,7 +40,7 @@ void main()
 				int sum=a->coefficient+b->coefficient;
 				if(sum!=0)
 				{
-					Insertf(sum,a->exp);
+					insertf(sum,a->exp);
 					a=a->address;
 					b=b->address;
 				}
@@ -46,40 +48,42 @@ void main()
 			}
 			case '<':
 			{
-				Insertf(b->coefficient,b->exp);
+				insertf(b->coefficient,b->exp);
 				b=b->address;
 				break;
 			}
 			case '>':
 			{
-				Insertf(a->coefficient,a->exp);
+				insertf(a->coefficient,a->exp);
 				a=a->address;
 				break;
 			}
-		}
+		}  
+
 	}
 	while(a!=NULL)
 	{
-		Insertf(a->coefficient,a->exp);
+		insertf(a->coefficient,a->exp);
 		a=a->address;
 	}
 	while(b!=NULL)
 	{
-		Insertf(b->coefficient,b->exp);
+		insertf(b->coefficient,b->exp);
 		b=b->address;
 	}
 	display(num1,num2);
 	displayf();
 }
-void Inserta()
-{
+
+void inserta()
+{	
 	int co,exp;
-	printf("Enter the coefficient : \n");
+	printf("Enter the coefficient\n");
 	scanf("%d",&co);
-	printf("Enter the exponent : \n");
+	printf("Enter the exponent");
 	scanf("%d",&exp);
 	ptr=(struct poly*)malloc(sizeof(struct poly));
-	if(ptr == NULL)
+	if(ptr==NULL)
 	{
 		printf("Overflow Error!!\n");
 		exit(0);
@@ -101,30 +105,29 @@ void Inserta()
 		temp->address=ptr;
 		ptr->address=NULL;
 	}
-}
-void Insertb()
+}    
+void insertb()
 {
 	int co,exp;
-	printf("Enter the Coefficient:\n");
+	printf("Enter the coefficient\n");
 	scanf("%d",&co);
-	printf("Enter the Exponent : \n");
+	printf("Enter the exponent");
 	scanf("%d",&exp);
 	ptr=(struct poly*)malloc(sizeof(struct poly));
-	ptr->coefficient=co;
-	ptr->exp=exp;
-	if(ptr == NULL)
+	if(ptr==NULL)
 	{
 		printf("Overflow Error!!\n");
 		exit(0);
 	}
-	
-	if(startb=NULL)
+	ptr->coefficient=co;
+	ptr->exp=exp;
+	if(startb==NULL)
 	{
 		ptr->address=startb;
 		startb=ptr;
 	}
 	else
-	{
+		{
 		temp=startb;
 		while(temp->address!=NULL)
 		{
@@ -137,16 +140,16 @@ void Insertb()
 void display(int num1,int num2)
 {
 	int i=0;
-	if(starta==NULL || startb==NULL)
+	if(starta==NULL||startb==NULL)
 	{
 		printf("List is Empty\n");
 		exit(0);
 	}
 	temp=starta;
-	printf("First Polynomial:\n");
+	printf("First polynomial :\n");
 	while(temp!=NULL)
 	{
-		printf("%dx^%d ",temp->coefficient,temp->exp);
+		printf("%dx^%d",temp->coefficient,temp->exp);
 		if(i!=num1-1)
 		{
 			printf("+ ");
@@ -157,10 +160,10 @@ void display(int num1,int num2)
 	printf("\n");
 	temp=startb;
 	i=0;
-	printf("Second Polynomial: \n");
+	printf("Second polynomial :\n");
 	while(temp!=NULL)
 	{
-		printf("%dx^%d ",temp->coefficient,temp->exp);
+		printf("%dx^%d",temp->coefficient,temp->exp);
 		if(i!=num2-1)
 		{
 			printf("+ ");
@@ -170,8 +173,7 @@ void display(int num1,int num2)
 	}
 	printf("\n");
 }
-
-char compare(int a,int b)
+char compare(int a, int b)
 {
 	if(a==b)
 	return '=';
@@ -180,12 +182,12 @@ char compare(int a,int b)
 	else
 	return '>';
 }
-void Insertf(int a,int b)
+void insertf(int a,int b)
 {
 	ptr=(struct poly*)malloc(sizeof(struct poly));
-	if(ptr == NULL)
+	if (ptr==NULL)
 	{
-		printf("Overflow Error!!\n");
+		printf("Overflow error");
 		exit(0);
 	}
 	ptr->coefficient=a;
@@ -206,20 +208,20 @@ void Insertf(int a,int b)
 		ptr->address=NULL;
 	}
 	count++;
-}
+}    
 void displayf()
 {
 	int i=0;
-	if(startf==NULL)
+	if (startf==NULL)
 	{
 		printf("List is Empty\n");
 		exit(0);
 	}
 	temp=startf;
-	printf("Resultant Polynomial: \n");
+	printf("Resultant polynomial :\n");
 	while(temp!=NULL)
 	{
-		printf("%dx^%d ",temp->coefficient,temp->exp);
+		printf("%dx^%d",temp->coefficient,temp->exp);
 		if(i!=count-1)
 		{
 			printf("+ ");
@@ -228,5 +230,4 @@ void displayf()
 		temp=temp->address;
 	}
 	printf("\n");
-}
-
+} 

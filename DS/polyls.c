@@ -149,7 +149,17 @@ void display(int num1,int num2)
 		printf("%dx^%d ",temp->coefficient,temp->exp);
 		if(i!=num1-1)
 		{
-			printf("
+			printf("+ ");
+			i++;
 		}
+		temp=temp->address;
+	}
+	printf("\n");
+	temp=startb;
+	i=0;
+	printf("Second Polynomial: \n");
+	while(temp!=NULL)
+	{
+		
 	}
 }

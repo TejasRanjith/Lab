@@ -173,5 +173,10 @@ void display(int num1,int num2)
 
 char compare(int a,int b)
 {
-	
+	if(a==b)
+	return '=';
+	else if (a<b)
+	return '<';
+	else
+	return '>';
 }

@@ -98,5 +98,26 @@ void Inserta()
 		{
 			temp=temp->address;
 		}
+		temp->address=ptr;
+		ptr->address=NULL;
 	}
+}
+void Insertb()
+{
+	int co,exp;
+	printf("Enter the Coefficient:\n");
+	scanf("%d",&co);
+	printf("Enter the Exponent : \n");
+	scanf("%d",&exp);
+	ptr=(struct poly*)malloc(sizeof(struct poly));
+	ptr->coeffecient=co;
+	ptr->exp=exp;
+	if(ptr == NULL)
+	{
+		printf("Overflow Error!!\n");
+		exit(0);
+	}
+	
+	if(startb=NULL)
+	
 }

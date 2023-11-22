@@ -119,5 +119,27 @@ void Insertb()
 	}
 	
 	if(startb=NULL)
-	
+	{
+		ptr->address=startb;
+		startb=ptr;
+	}
+	else
+	{
+		temp=startb;
+		while(temp-address!=NULL)
+		{
+			temp=temp->address;
+		}
+		temp->address=ptr;
+		ptr->address=NULL;
+	}
+}
+void display(int num1,int num2)
+{
+	int i=0;
+	if(starta==NULL || startb==NULL)
+	{
+		printf("List is Empty\n");
+		exit(0);
+	}
 }

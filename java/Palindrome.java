@@ -26,11 +26,11 @@ public class Palindrome
 		}
 		if(cond==1)
 		{
-			System.out.print("It is a Palindrome.");
+			System.out.print("It is a Palindrome.\n");
 		}
 		else
 		{
-			System.out.print("It is not a Palindrome.");
+			System.out.print("It is not a Palindrome.\n");
 		}
 		
 	}

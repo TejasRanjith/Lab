@@ -19,6 +19,6 @@ public class Frequency
 				count++;
 			}
 		}
-		System.out.print("No. of '"+in+"' in the word is : "+count);
+		System.out.println("No. of '"+in+"' in the word is : "+count);
 	}
 }

@@ -38,6 +38,7 @@ public class SwingCalc extends JFrame implements ActionListener
             int a=Integer.parseInt(s1);  
             int b=Integer.parseInt(s2);  
             int c=0;  
+            String ch="";
             if(e.getSource()==b1)
             {  
                 c=a+b;  
@@ -52,10 +53,17 @@ public class SwingCalc extends JFrame implements ActionListener
 			}
 			else if(e.getSource()==b4)
 			{
-				c=a/b;
+				try
+				{
+					c=a/b;
+				}
+				catch (ArithmeticException e1)
+				{
+					ch="Division By Zero is not possible";
+				}
 			}
-            String result=" "+c;
-            tf3.setText(result);  
+            String result=" "+c+ch;
+            tf3.setText(result);
         }  
 	    public static void main(String[] args) 
 	   {  

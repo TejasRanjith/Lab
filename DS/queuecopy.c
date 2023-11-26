@@ -12,24 +12,23 @@ void insert()
     {
         if (front==-1)
         {
-            front=0;
+            front++;
             printf("Insert the element in queue : ");
             scanf("%d",&item);
-            rear++;
-            queue[rear]=item;
+            queue[front]=item;
         }
         else
         {
+            front++;
             printf("Insert the element in queue : ");
             scanf("%d",&item);
-            rear++;
-            queue[rear]=item;
+            queue[front]=item;
         }
     }
 }
 void delete()
 {
-    if (front==-1 || front>rear)
+    if (front==-1)
     {
         printf("Queue Underflow \n");
         return;
@@ -37,7 +36,7 @@ void delete()
     else
     {
         printf("Element deleted from queue is : %d\n",queue[front]);
-        front++;
+        front--;
     }
 }
 void display()
@@ -50,7 +49,7 @@ void display()
     else
     {
         printf("Queue is : ");
-        for(i=front;i<=rear;i++)
+        for(i=rear+1;i<=front;i++)
         {
             printf("%d ",queue[i]);
         }

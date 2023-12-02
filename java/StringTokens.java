@@ -16,6 +16,6 @@ class StringTokens
 			System.out.println(n);
 			sum=sum + n;
 		}
-		System.out.print("sum is "+sum+".");
+		System.out.println("sum is "+sum+".");
 	}
 }

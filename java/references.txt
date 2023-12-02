@@ -1,0 +1,17 @@
+sudo service mysql start
+
+
+mysql -e "SELECT User FROM mysql.user;"
+
+
+CREATE USER 'tejas'@'localhost' IDENTIFIED BY '035611';
+
+
+GRANT ALL PRIVILEGES ON your_database.* TO 'new_username'@'localhost';
+
+
+FLUSH PRIVILEGES;
+
+
+
+

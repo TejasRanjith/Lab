@@ -1,13 +1,14 @@
 import java.util.*;
 
-class DoubleLink
+public class DoubleLink
 {
 	public static void main(String ar[])
 	{
 		Scanner s=new Scanner(System.in);
 		LinkedList<String> ll =new LinkedList<String>();
-		int choice;
+		int choice,pos;
 		int flag=0;
+		String val;
 		System.out.println("    MENU\n1. Add \n2. Delete \n3. Display \n4. Exit");
 		do
 		{
@@ -17,7 +18,21 @@ class DoubleLink
 			{
 				case 1 : 
 				System.out.println("Enter the Value : ");
-				ll.add(s.next());
+				val=s.next();
+				System.out.println("Enter the Position : ");
+				pos=s.nextInt()-1;
+				if (ll.size()==0)
+				{
+					ll.add(val);
+				}
+				else if (pos>ll.size())
+				{
+					System.out.println("Out of Bounds....");
+				}
+				else
+				{
+					ll.add(pos,val);
+				}
 				break;	   
 				case 2 : 
 				if(ll.size()==0)

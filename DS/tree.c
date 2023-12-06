@@ -95,7 +95,7 @@ node* search(node **tree,int val)
 void main()
 {
     node *root;
-    node *temp;
+    node *tmp;
     int i,size,val,key;
     
     root = NULL;
@@ -119,6 +119,20 @@ void main()
     printf("Post-Order Display:\n");
     print_postorder(root);
     printf("\n");
+    
+    printf("Enter the element to be searched in the tree : ");
+    scanf("%d",&key);
+    
+    tmp = search(&root, key);
+    if(tmp)
+    {
+        printf("Searched node = %d , is found",tmp->data);
+    }
+    else
+    {
+        printf("Node not Found in tree.\n");
+    }
+    deltree(root);
 }
 
 

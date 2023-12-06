@@ -73,8 +73,52 @@ void deltree(node *tree)
 
 node* search(node **tree,int val)
 {
-    if(!(*(tree))
+    if(!(*tree))
     {
         return NULL;
     }
+    
+    if(val<(*tree)-> data)
+    {
+        search(&((*tree)->left),val);
+    }
+    else if(val > (*tree)->data)
+    {
+        search(&((*tree)->right),val);
+    }
+    else if(val == (*tree)-> data)
+    {
+        return *tree;
+    }
 }
+
+void main()
+{
+    node *root;
+    node *temp;
+    int i,size,val,key;
+    
+    root = NULL;
+    printf("Enter the number of nodes in the tree: ");
+    scanf("%d",&size);
+    printf("\nEnter the nodes of the tree : ");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&val);
+        insert(&root,val);
+    }
+    
+    printf("Pre-Order Display:\n");
+    print_preorder(root);
+    printf("\n");
+    
+    printf("In-Order Display:\n");
+    print_inorder(root);
+    printf("\n");
+    
+    printf("Post-Order Display:\n");
+    print_postorder(root);
+    printf("\n");
+}
+
+

@@ -11,8 +11,8 @@ public class MySQL
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/","tejas","035611");
         //Create a statement object
             Statement st=con.createStatement(); 
-            st.execute("CREATE DATABASE base4;");
-            st.execute("USE base4;");
+            st.execute("CREATE DATABASE base1;");
+            st.execute("USE base1;");
             st.execute("CREATE TABLE s3ad(roll int,Age int, Name varchar(15))");
             st.execute("INSERT INTO s3ad VALUES (1,18,'Tejas')");
             st.execute("INSERT INTO s3ad VALUES (2,50,'Ranjith')");

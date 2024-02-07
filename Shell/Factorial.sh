@@ -19,6 +19,3 @@ echo "the factorial number of $n is $fact"
 #4
 #the factorial number of 4 is 24
 
-
-#greater of two numbers
-#fibonacci

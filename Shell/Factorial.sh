@@ -11,11 +11,5 @@ i=`expr $i + 1`
 done
 echo "the factorial number of $n is $fact"
 
-#Enter the Number
-#5
-#the factorial number of 5 is 120
 
-#Enter the Number
-#4
-#the factorial number of 4 is 24
-
+#2

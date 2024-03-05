@@ -12,4 +12,3 @@ done
 echo "the factorial number of $n is $fact"
 
 
-#2

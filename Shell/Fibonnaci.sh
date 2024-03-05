@@ -14,5 +14,3 @@ n2=`expr $n3`
 var=`expr $var + 1`
 echo "$n2"
 done
-
-#3

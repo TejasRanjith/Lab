@@ -32,6 +32,7 @@ int WT_TAT(int *a, int *b)
 		if(i==0)
 		{
 			tat[i]=bt[i];
+			tot_tat=tot_tat+tat[i];			
 		}
 		else
 		{

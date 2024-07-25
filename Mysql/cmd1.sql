@@ -1,4 +1,4 @@
-create table emp(
+create table employee(
     emp_id char(8) check(emp_id like 'E%') primary key,
     emp_name varchar(18),
     street_no int,
@@ -23,11 +23,11 @@ create table manages(
     unique(emp_id,manager_id)
 );
 
-insert into emp values
+insert into employee values
     ('E-101','Adarsh',101,'MG Road'),
     ('E-102','Bonny',101,'MG Road'),
-    ('E-103','Catherine',102,'Road'),
-    ('E-104','Glenn',104,'Road'),
+    ('E-103','Catherine',102,'Cochin'),
+    ('E-104','Glenn',104,'Ernakulam'),
     ('E-105','George',201,'MG Road'),
     ('E-106','Hayes',101,'MG Road'),
     ('E-107','Johnson',102,'Cochin'),
@@ -79,4 +79,12 @@ select * from works;
 select * from manages;
 
 rename table emp to employee;
+
+select distinct salary from works;
+
+select * from company where city = 'Cochin';
+
+select * from works where salary between 15000 and 35000;
+
+select emp_name,city from employee where city like 'C%';
 

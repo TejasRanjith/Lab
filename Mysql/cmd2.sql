@@ -1,1 +1,1 @@
-select distinct salary from works;
+select emp_name,city from employee where city like 'C%';

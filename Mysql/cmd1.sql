@@ -88,3 +88,7 @@ select * from works where salary between 15000 and 35000;
 
 select emp_name,city from employee where city like 'C%';
 
+select * from employee where emp_id = 'E-103' or emp_name like 'J%';
+
+select * from employee where emp_id = 'E-103' and emp_name like 'S%';
+

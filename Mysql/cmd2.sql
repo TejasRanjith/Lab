@@ -1,1 +1,0 @@
-select emp_name,city from employee where city like 'C%';

@@ -92,3 +92,5 @@ select * from employee where emp_id = 'E-103' or emp_name like 'J%';
 
 select * from employee where emp_id = 'E-103' and emp_name like 'S%';
 
+update employee set emp_name = 'Tejas'
+where emp_name = 'Johnson';

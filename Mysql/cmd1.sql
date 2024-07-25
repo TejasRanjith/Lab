@@ -52,6 +52,8 @@ insert into works values
     ('E-103','SBT',40000),
     ('E-104','Federal',37000),
     ('E-105','SBT',17000),
+    ('E-106','Indian Bank',30000),
+    ('E-107','SIB',21000),
     ('E-108','SIB',18000),
     ('E-109','Indian Bank',28000),
     ('E-110','SBT',25000),

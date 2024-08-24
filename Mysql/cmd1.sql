@@ -139,3 +139,28 @@ select rtrim('ANITA','A');
 
 select rtrim('ANACONDA','A','A');
 
+create table Faculty(
+FacultyCode varchar(25) primary key,
+FacultyName varchar(25));
+
+create table Subject(
+    SubjectCode varchar(25) primary key,
+    SubjectName varchar(25),
+    MaxMark int,
+    FacutlyCode varchar(25)
+);
+
+create table Student(
+    StudentCode varchar(25) primary key,
+    StudentName varchar(25),
+    DOB date,
+    StudentsBranch varchar(25),
+    AdmissionDate date
+);
+
+create table M_Mark(
+    StudentCode varchar(25) primary key,
+    SubjectCode varchar(25),
+    Mark int
+);
+

@@ -94,3 +94,48 @@ select * from employee where emp_id = 'E-103' and emp_name like 'S%';
 
 update employee set emp_name = 'Tejas'
 where emp_name = 'Johnson';
+
+select greatest(23,67,90,123,12);
+
+select mod(4,2);
+
+select exp(2);
+
+select current_date;
+
+select extract(year from sysdate());
+
+select extract(day from sysdate());
+
+select extract(month from sysdate());
+
+select sysdate();
+
+select ascii('a');
+
+select ascii('A');
+
+select ascii('t');
+
+select ascii('T');
+
+select upper("hi my names is Tejas");
+
+select upper("hi my names is Tejas");
+
+select lower("HI MY NAME IS Tejas");
+
+select replace("Hello","H","k");
+
+select replace("Hello","l","A");
+
+select trim('A' from 'ANACONDA');
+
+select ltrim('A' from 'ANACONDA');
+
+select ltrim('ANIL','A');
+
+select rtrim('ANITA','A');
+
+select rtrim('ANACONDA','A','A');
+

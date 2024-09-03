@@ -1,0 +1,1 @@
+select StudentName,sum(Mark) from 

@@ -159,8 +159,77 @@ create table Student(
 );
 
 create table M_Mark(
-    StudentCode varchar(25) primary key,
+    StudentCode varchar(25),
     SubjectCode varchar(25),
     Mark int
 );
 
+-- Insert values into Faculty table
+-- Insert values into Faculty table
+INSERT INTO Faculty (FacultyCode, FacultyName) VALUES 
+('FAC001', 'Alice Smith'),
+('FAC002', 'Bob Johnson'),
+('FAC003', 'Carol White'),
+('FAC004', 'David Brown'),
+('FAC005', 'Eve Davis'),
+('FAC006', 'Frank Clark'),
+('FAC007', 'Grace Lewis'),
+('FAC008', 'Hank Wilson'),
+('FAC009', 'Ivy Turner'),
+('FAC010', 'John Moore');
+
+-- Insert values into Subject table
+INSERT INTO Subject (SubjectCode, SubjectName, MaxMark, FacutlyCode) VALUES 
+('SUB001', 'Mathematics', 100, 'FAC001'),
+('SUB002', 'Physics', 100, 'FAC002'),
+('SUB003', 'Chemistry', 100, 'FAC003'),
+('SUB004', 'Biology', 100, 'FAC004'),
+('SUB005', 'English', 100, 'FAC005'),
+('SUB006', 'History', 100, 'FAC006'),
+('SUB007', 'Geography', 100, 'FAC007'),
+('SUB008', 'Computer Science', 100, 'FAC008'),
+('SUB009', 'Economics', 100, 'FAC009'),
+('SUB010', 'Art', 100, 'FAC010');
+
+-- Insert values into Student table
+INSERT INTO Student (StudentCode, StudentName, DOB, StudentsBranch, AdmissionDate) VALUES 
+('STU001', 'Tom Green', '2002-05-14', 'CS', '2020-09-01'),
+('STU002', 'Lucy Adams', '2003-11-23', 'EC', '2021-09-01'),
+('STU003', 'Mark Taylor', '2002-07-09', 'EE', '2020-09-01'),
+('STU004', 'Nina Scott', '2004-02-18', 'CS', '2022-09-01'),
+('STU005', 'Owen Clark', '2002-12-30', 'EC', '2020-09-01'),
+('STU006', 'Pamela Brooks', '2003-03-21', 'CS', '2021-09-01'),
+('STU007', 'Quinn Evans', '2002-10-12', 'ME', '2020-09-01'),
+('STU008', 'Riley James', '2004-08-07', 'EE', '2022-09-01'),
+('STU009', 'Samantha Wright', '2003-06-29', 'CS', '2021-09-01'),
+('STU010', 'Tyler Murphy', '2002-04-25', 'ME', '2020-09-01');
+
+-- Insert values into M_Mark table
+INSERT INTO M_Mark (StudentCode, SubjectCode, Mark) VALUES 
+('STU001', 'SUB001', 85),
+('STU001', 'SUB002', 90),
+('STU002', 'SUB003', 75),
+('STU002', 'SUB004', 88),
+('STU003', 'SUB005', 92),
+('STU003', 'SUB006', 78),
+('STU004', 'SUB007', 80),
+('STU004', 'SUB008', 85),
+('STU005', 'SUB009', 65),
+('STU005', 'SUB010', 70),
+('STU006', 'SUB001', 88),
+('STU006', 'SUB002', 79),
+('STU007', 'SUB003', 91),
+('STU007', 'SUB004', 86),
+('STU008', 'SUB005', 77),
+('STU008', 'SUB006', 82),
+('STU009', 'SUB007', 68),
+('STU009', 'SUB008', 74),
+('STU010', 'SUB009', 81),
+('STU010', 'SUB010', 77);
+
+select * from Student;
+select * from Faculty;
+select * from M_Mark;
+select * from Subject;
+
+select count(FacultyCode) from Faculty;

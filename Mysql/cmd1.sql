@@ -159,6 +159,7 @@ create table Student(
 );
 
 create table M_Mark(
+    index_no int NOT NULL AUTO_INCREMENT primary key,
     StudentCode varchar(25),
     SubjectCode varchar(25),
     Mark int

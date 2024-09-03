@@ -177,7 +177,7 @@ INSERT INTO Faculty (FacultyCode, FacultyName) VALUES
 ('FAC007', 'Grace Lewis'),
 ('FAC008', 'Hank Wilson'),
 ('FAC009', 'Ivy Turner'),
-('FAC010', 'John Moore');
+('FAC010', 'John Moore');474
 
 -- Insert values into Subject table
 INSERT INTO Subject (SubjectCode, SubjectName, MaxMark, FacutlyCode) VALUES 
@@ -234,3 +234,17 @@ select * from M_Mark;
 select * from Subject;
 
 select count(FacultyCode) from Faculty;
+
+
+select StudentName,sum(Mark)
+from Student,M_Mark 
+where Student.StudentCode = M_Mark.StudentCode
+group by StudentName;
+
+
+select SubjectName,avg(Mark)
+from Subject,M_Mark 
+where Subject.SubjectCode = M_Mark.SubjectCode
+group by SubjectName;
+
+

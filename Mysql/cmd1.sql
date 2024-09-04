@@ -248,3 +248,7 @@ where Subject.SubjectCode = M_Mark.SubjectCode
 group by SubjectName;
 
 
+select distinct(SubjectName) from Subject,M_Mark where Subject.SubjectCode = M_Mark.SubjectCode and Mark <=75;
+
+
+select StudentName,SubjectName,(Mark/2) from Student,Subject,M_Mark where Student.StudentCode=M_Mark.StudentCode and Subject.SubjectCode=M_Mark.SubjectCode;

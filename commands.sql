@@ -20,8 +20,61 @@ insert into dept values (1, 'Administration', null, 'Boston'),
     (4, 'Programming',null, 'Hudson'),
     (5, 'HR', null, 'Hudson');
 
+
 Alter table dept add foreign key(manager_id) references emp(EMP_no);
 Update dept set manager_id=2 where department_id=1;
 Update dept set manager_id=1 where department_id=2;
 Update dept set manager_id=8 where department_id=3;
 Update dept set manager_id=7 where department_id=4;
+
+
+select emp_name, salary from emp where salary not between 5000 and
+35000;
+
+select emp_name, job, hiredate from emp where hiredate between '1990-02-20' and '1998-05-01' order by hiredate
+
+select Emp_name "Employee", Salary "Monthly Salary" ,Depno from emp
+where Salary between 5000 and 30000 and depno IN (2, 4);
+
+select emp_name, hiredate from emp where hiredate like '%94';
+
+select emp_name, salary, comm from emp where comm >0
+order by salary desc, comm desc;
+
+select emp_name, job from emp,dept where manager_id is null and
+emp.depno=dept.department_id;
+
+select emp_name from emp where emp_name like ' a%';
+
+select emp_name from emp where emp_name like '%a%' and emp_name
+like '%e%';
+
+select emp_name, job, salary from emp where job IN ('Sa_rep', 'CLERK')
+and salary not IN (2000, 4000, 7000);
+
+select INITCAP(emp_name) "Name", LENGTH(emp_name) "Length" from emp where emp_name like 'J%' OR emp_name like 'M%' OR emp_name like
+'A%'order by emp_name;
+
+select emp_name, ROUND(MONTHS_between(SYSDATE, hiredate))
+MONTHS_WORKED, round(MONTHS_between(SYSDATE, hiredate)/12,2) “NO:
+Of YEARS” from emp order by MONTHS_between(SYSDATE, hiredate);
+
+select emp.emp_name, emp.depno, dept.department_name from emp , dept
+where emp.depno = dept.department_id order by dept.department_name;
+
+select emp_Name, HireDate from Emp where ((HireDate)>any(select
+HireDate from Emp where emp_Name='Mathew'));
+
+select emp.emp_name employee , emp.hiredate “EMP HIRE DATE”, emp.salary,
+manager.emp_name manager, manager.hiredate “MANAGER HIRE DATE” from emp ,
+dept, emp manager where dept.manager_id = manager.emp_no and
+emp.depno=dept.department_id and
+emp.hiredate < manager.hiredate;
+
+select job, COUNT(*) “No: of Jobs” from emp GROUP BY job;
+
+select min(salary) “MINIMUM SALARY”,manager_id, department_name from
+emp,dept where emp.depno=dept.department_id and manager_id IS not NULL
+GROUP BY manager_id, department_name HAVING MIN(salary) > 6000
+order by “MINIMUM SALARY” desc
+

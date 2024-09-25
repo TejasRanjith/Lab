@@ -19,3 +19,9 @@ insert into dept values (1, 'Administration', null, 'Boston'),
     (3, 'Purchase', null, 'perryridge'),
     (4, 'Programming',null, 'Hudson'),
     (5, 'HR', null, 'Hudson');
+
+Alter table dept add foreign key(manager_id) references emp(EMP_no);
+Update dept set manager_id=2 where department_id=1;
+Update dept set manager_id=1 where department_id=2;
+Update dept set manager_id=8 where department_id=3;
+Update dept set manager_id=7 where department_id=4;

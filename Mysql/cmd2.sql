@@ -1,29 +1,40 @@
-
-Create Table employees (
-  employee_id number(5) primary key,
-  first_name varchar2(50),
-  last_name varchar2(50),
-  hire_date date,
-  salary number(10,2)
-);
-
-insert into employees(employee_id,first_name,last_name,hire_date,salary)
-values (1,'john','doe',to_date('2023-10-20','YYYY-MM-DD'),50000),
-(2,'jane','smith',to_date('2023-11-02','YYYY-MM-DD'),25000);
-
-Commit;
-
-declare
-v_first_name employees.first_name%TYPE;
-v_last_name employees.last_name%TYPE;
-v_salary employees.salary%TYPE;
-
-BEGIN 
-  select first_name, last_name, salary
-  into v_first_name, v_last_name, v_salary
-  from employees
-  where employee_id = 1;
-  
-  dbms_output.put_line('Employee Name: ' || v_first_name || ' ' || v_last_name);
+DECLARE
+name Char(10);
+no int;
+TOTMARK NUMBER(5,2);
+BEGIN
+Select rollno,name,(mark1+mark2+mark3) into No,Name, TOTMARK from stud where
+rollno=&amp;no;
+IF TOTMARK &gt;=250 THEN
+DBMS_OUTPUT.PUT_LINE (&#39; &#39;);
+DBMS_OUTPUT.PUT_LINE(‘ ROLL NO :&#39;||no);
+DBMS_OUTPUT.PUT_LINE(&#39; STUDENT NAME :&#39;|| name);
+DBMS_OUTPUT.PUT_LINE(&#39; TOTAL MARK :&#39;|| TOTMARK);
+DBMS_OUTPUT.PUT_LINE(&#39; GRADE :DISTINCTION’);
+DBMS_OUTPUT.PUT_LINE (&#39; &#39;);
+ELSE IF TOTMARK &lt;250 AND TOTMARK &gt;=180 THEN
+DBMS_OUTPUT.PUT_LINE (&#39; &#39;);
+DBMS_OUTPUT.PUT_LINE(‘ROLL NO :&#39;||no);
+DBMS_OUTPUT.PUT_LINE(&#39; STUDENT NAME :&#39;|| name);
+DBMS_OUTPUT.PUT_LINE(&#39; TOTAL MARK :&#39;|| TOTMARK);
+DBMS_OUTPUT.PUT_LINE(&#39; GRADE :First Class’);
+DBMS_OUTPUT.PUT_LINE (&#39; &#39;);
+ELSE IF TOTMARK &lt;=179 AND TOTMARK &gt;=120 THEN
+DBMS_OUTPUT.PUT_LINE (&#39; &#39;);
+DBMS_OUTPUT.PUT_LINE(‘ROLL NO :&#39;||no);
+DBMS_OUTPUT.PUT_LINE(&#39; NAME :&#39;|| name);
+DBMS_OUTPUT.PUT_LINE(&#39; TOTAL MARK :&#39;|| TOTMARK);
+DBMS_OUTPUT.PUT_LINE(&#39; GRADE :SECOND Class’);
+DBMS_OUTPUT.PUT_LINE (&#39; &#39;);
+ELSE
+DBMS_OUTPUT.PUT_LINE (&#39; &#39;);
+DBMS_OUTPUT.PUT_LINE(‘ROLL NO :&#39;||no);
+DBMS_OUTPUT.PUT_LINE(&#39; NAME :&#39;|| name);
+DBMS_OUTPUT.PUT_LINE(&#39; TOTAL MARK :&#39;|| TOTMARK);
+DBMS_OUTPUT.PUT_LINE(&#39;FAILED &#39;);
+DBMS_OUTPUT.PUT_LINE (&#39; &#39;);
+END IF;
+END IF;
+END IF;
 END;
 /
